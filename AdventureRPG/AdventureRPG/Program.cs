@@ -68,7 +68,6 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
         // There are two of these while-loops. The way they work, is that as long as the health of the player character AND the AIs haven't reached 0, the game will continue. The code within the while-loop, (the fights), will repeat until one of them has their health reach 0.
         while(playerHealth > 0 && enemyEntityHealth1 > 0)
         {
-            Console.WriteLine("A new round has started!");
             Console.WriteLine($"\n Health [{name}]: {playerHealth} hp -//- Health [Small Amorphous Mass]: {enemyEntityHealth1} hp");
 
             Console.WriteLine("\n\n It is now your turn to attack!");
@@ -98,7 +97,6 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
 
             while(playerHealth > 0 && enemyEntityHealth2 > 0) // See line 68 for more info.
             {
-                Console.WriteLine("A new round has started!");
                 Console.WriteLine($"\n Health [{name}]: {playerHealth} hp -//- Health [Deer Entity]: {enemyEntityHealth2} hp");
 
                 Console.WriteLine("\n\n It is now your turn to attack!");
