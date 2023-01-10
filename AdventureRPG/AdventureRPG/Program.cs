@@ -22,7 +22,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
     // This is the intro to the game. The player is given a choice between continuing the game by waking up (typing 'yes'), or ending the game early by going back to sleep (typing 'no'). 
     Console.WriteLine("You wake up in a dark room. The tattered curtains are closed, sunlight peeking through the multitude of holes dotting the biege fabric. You turn your head to see what your alarm clock says. It reads: '06:47'. Do you get out of bed? \n\n [yes // no] \n (This is case sensitive. Please use lowercase letters when answering.)");
 
-    string wakeUp = Startscene.wakeUp(); // This code is a method (More info on line 35). The difference with this code is that the player chooses either 'yes' or 'no'. If yes is choosen, the the game will continue. However, if the player chooses 'no', the game will end and the player will be asked if they want to restart.
+    string wakeUp = Startscene.WakeUp(); // This code is a method (More info on line 35). The difference with this code is that the player chooses either 'yes' or 'no'. If yes is choosen, the the game will continue. However, if the player chooses 'no', the game will end and the player will be asked if they want to restart.
     
     if (wakeUp == "no") // See line 25 for more info.
     {
@@ -32,12 +32,12 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
     {
         // The rest of the game
         
-        Text.firstscene(); // This code is a method. It is the same as 'Departure.departurescene();', EnemyEncounter1.enemyscene1();', etc in that they are all written in seperate files. These are then brought into 'Program.cs' with this code. Using methods is a good way to, for example, save space and make the entire code less cluttered, etc.  
+        Text.FirstScene(); // This code is a method. It is the same as 'Departure.departurescene();', EnemyEncounter1.enemyscene1();', etc in that they are all written in seperate files. These are then brought into 'Program.cs' with this code. Using methods is a good way to, for example, save space and make the entire code less cluttered, etc.  
 
         Console.WriteLine("\n My name is:"); // This code allows the player to write what the name of their character will be.
         name = Console.ReadLine();
 
-        Departure.departurescene(); // See line 35 for more info.
+        Departure.DepartureScene(); // See line 35 for more info.
 
         // This code allows the player to choose which weapon they want their character to use. 'a's is for knife, 'b' is for metal pole, 'c' is for baseball bat, and 'd' is for axe.
         Console.WriteLine("\n You have 4 choices. Kitchen Knife [a] / Metal pole [b] / Baseball bat [c] / Axe [d] \n (This is case sensitive. Please use lowercase letters when choosing your weapon.)");
@@ -63,7 +63,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
             weaponChoice = "Axe";
         }
 
-        EnemyEncounter1.enemyscene1(); // See line 35 for more info.
+        EnemyEncounter1.EnemyScene1(); // See line 35 for more info.
 
         // There are two of these while-loops. The way they work, is that as long as the health of the player character AND the AIs haven't reached 0, the game will continue. The code within the while-loop, (the fights), will repeat until one of them has their health reach 0.
         while(playerHealth > 0 && enemyEntityHealth1 > 0)
@@ -124,7 +124,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
             }
             else
             {
-                Ending.Endingscene(); // See line 35 for more info.
+                Ending.EndingScene(); // See line 35 for more info.
 
                 for(int i = 0; i < 4; i++) // This will run a for-loop in order to get 4 '...' before the game declares that the player has won.
                 {
