@@ -2,8 +2,8 @@ public class Startscene // Class is visible in 4 different ways: Public, Private
 {
     public static string WakeUp()
     {
-        string wakeUp = ""; // This while-loop is case sensitive. Only lowercase letters.
-        while (wakeUp != "yes" && wakeUp != "no") // This while-loop will make it so that the player has to type either yes or no. If they don't, the 
+        string wakeUp = ""; 
+        while (wakeUp != "yes" && wakeUp != "no") // This while-loop will make it so that the player has to type either 'yes' or 'no'. 
         {
             wakeUp = Console.ReadLine();
             if (wakeUp != "yes" || wakeUp != "no")
@@ -12,7 +12,7 @@ public class Startscene // Class is visible in 4 different ways: Public, Private
             }
 
         }
-        return wakeUp; // This code will restart the while-loop if the player doesn't type yes or no.
+        return wakeUp; // This code will restart the while-loop if the player doesn't type 'yes' or 'no'.
 
     }
 }
