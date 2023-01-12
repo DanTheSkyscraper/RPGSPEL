@@ -7,7 +7,7 @@ public class PlayerBattle2 // Class is visible in 4 different ways: Public, Priv
         while(playerBattleChoice2 != "a" && playerBattleChoice2 != "d") // This while-loop will make it so that the player has to type either 'a' or 'd'.
         {
             playerBattleChoice2 = Console.ReadLine();
-            if(playerBattleChoice2 != "a" || playerBattleChoice2 != "d")
+            if(playerBattleChoice2 != "a" && playerBattleChoice2 != "d")
             {
                 Console.WriteLine("Please type either 'a' or 'd'. The answer should be in lowercase!");
             }

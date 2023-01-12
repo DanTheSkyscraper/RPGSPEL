@@ -26,7 +26,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
     // This is the intro to the game. The player is given a choice between continuing the game by waking up (typing 'yes'), or ending the game early by going back to sleep (typing 'no'). 
     Console.WriteLine("You wake up in a dark room. The tattered curtains are closed, sunlight peeking through the multitude of holes dotting the biege fabric. You turn your head to see what your alarm clock says. It reads: '06:47'. Do you get out of bed? \n\n [yes // no] \n (This is case sensitive. Please use lowercase letters when answering.)");
 
-    string wakeUp = Startscene.WakeUp(); // This code is a method (More info on line 35). The difference with this code is that the player chooses either 'yes' or 'no'. If yes is choosen, the the game will continue. However, if the player chooses 'no', the game will end and the player will be asked if they want to restart.
+    string wakeUp = StartScene.WakeUp(); // This code is a method (More info on line 35). The difference with this code is that the player chooses either 'yes' or 'no'. If yes is choosen, the the game will continue. However, if the player chooses 'no', the game will end and the player will be asked if they want to restart.
     
     if (wakeUp == "no")
     {
@@ -49,22 +49,22 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
         string weaponChoice = WeaponChoice.weaponChoice(); // See line 29 and 39 for more info.
         if(weaponChoice == "a")
         {
-            Console.WriteLine("You chose the Kitchen Knife");
+            Console.WriteLine("You chose the 'Kitchen Knife'");
             weaponChoice = "Kitchen Knife";
         }
         else if(weaponChoice == "b")
         {
-            Console.WriteLine("You chose the Metal pole");
+            Console.WriteLine("You chose the 'Metal pole'");
             weaponChoice = "Metal pole";
         }
         else if(weaponChoice == "c")
         {
-            Console.WriteLine("You chose the Baseball bat");
+            Console.WriteLine("You chose the 'Baseball bat'");
             weaponChoice = "Baseball bat";
         }
         else
         {
-            Console.WriteLine("You chose the Axe");
+            Console.WriteLine("You chose the 'Axe'");
             weaponChoice = "Axe";
         }
         
@@ -74,7 +74,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
         // There are two of these while-loops. The way they work, is that as long as the health of the player character AND the AIs haven't reached 0, the game will continue. The code within the while-loop, (the fights), will repeat until one of them has their health reach 0.
         while(playerHealth > 0 && enemyEntityHealth1 > 0)
         {
-            Console.WriteLine("A new round has begun!");
+            Console.WriteLine("\n A new round has begun!");
             for(int i = 0; i < 2; i++) // This will run a for-loop in order to get 2 '...' before the game continues with the while-loop.
             {
                 Console.WriteLine("\n ...");
@@ -97,9 +97,9 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
                 int playerDamage = generator.Next(weaponMinDamage, weaponMaxDamage); // 'generator.Next(weaponMinDamage, weaponMaxDamage);' in the while-loop is important, because it randomizes the damage the player character deals to the AI Entities. This specific line will randomize a number between 0 and 25.
                 enemyEntityHealth1 -= playerDamage; // This code within the while-loop will subtract the health of the player and the AI Entities with the damage they deal to each other.
                 enemyEntityHealth1 = Math.Max(0, enemyEntityHealth1); // 'Math.Max' is a Math class method used to return the larger of two specified numbers. In this code, 'enemyEntityHealth1 = Math.Max(0, enemyEntityHealth1);' will not return 0, but 'enemyEntityHealth1', which is the health of 'enemyEntity1' (Small Amorphous Mass), and larger of the two numbers.
-                Console.WriteLine($"\n You hit your opponent, dealing {playerDamage} damage to 'Small Amorphous Mass'.");
+                Console.WriteLine($" You hit your opponent, dealing {playerDamage} damage to 'Small Amorphous Mass'.");
 
-                Console.WriteLine("The 'Small Amorphous Mass' attacks you!");
+                Console.WriteLine("\n The 'Small Amorphous Mass' attacks you!");
                 int enemyEntity1Damage = generator.Next(enemyEntity1MinDamage, enemyEntity1MaxDamage); // This code within the while-loop randomizes the damage the first AI Entity deals to the player, with a randomized number between 0 and 5.
                 playerHealth -= enemyEntity1Damage; // See line 98 for more info.
                 playerHealth = Math.Max(0, playerHealth); // 'Math.Max' is a Math class method used to return the larger of two specified numbers. In this code, 'playerHealth = Math.Max(0, playerHealth);' will not return 0, but 'playerHealth', which is the health of the player, and larger of the two numbers.
@@ -108,7 +108,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
             else
             {
                 Console.WriteLine($"\n You prepare to block the attack of the entity with your {weaponChoice}!");
-                Console.WriteLine("The 'Small Amorphous Mass' attacks you!");
+                Console.WriteLine("\n The 'Small Amorphous Mass' attacks you!");
                 int enemyEntity1Damage = generator.Next(enemyEntity1MinDamage, enemyEntity1MaxDamage) - playerBlock1; // This code within the while-loop randomizes the damage the first AI Entity deals to the player, with a randomized number between 0 and 5.
                 playerHealth -= enemyEntity1Damage; // See line 98 for more info.
                 playerHealth = Math.Max(0, playerHealth); // 'Math.Max' is a Math class method used to return the larger of two specified numbers. In this code, 'playerHealth = Math.Max(0, playerHealth);' will not return 0, but 'playerHealth', which is the health of the player, and larger of the two numbers.
@@ -127,7 +127,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
 
             while(playerHealth > 0 && enemyEntityHealth2 > 0) // See line 74 for more info.
             {
-                Console.WriteLine("A new round has begun!");
+                Console.WriteLine("\n A new round has begun!");
                 for(int i = 0; i < 2; i++) // This will run a for-loop in order to get 2 '...' before the game continues with the while-loop.
                 {
                     Console.WriteLine("\n ...");
@@ -151,7 +151,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
                     int playerDamage = generator.Next(weaponMinDamage, weaponMaxDamage); 
                     enemyEntityHealth2 -= playerDamage;
                     enemyEntityHealth2 = Math.Max(0, enemyEntityHealth2); // 'Math.Max' is a Math class method used to return the larger of two specified numbers. In this code, 'enemyEntityHealth2 = Math.Max(0, enemyEntityHealth2);' will not return 0, but 'enemyEntityHealth2', which is the health of 'enemyEntity2' (Deer Entity), and larger of the two numbers.
-                    Console.WriteLine($"\n You hit your opponent, dealing {playerDamage} damage to 'Deer Entity'.");
+                    Console.WriteLine($"You hit your opponent, dealing {playerDamage} damage to 'Deer Entity'.");
                     
                     Console.WriteLine("\n The 'Deer Entity' attacks you!");
                     int enemyEntity2Damage = generator.Next(enemyEntity2MinDamage, enemyEntity2MaxDamage); // This code randomizes the damage the second AI Entity deals to the player, with a randomized number between 0 and 20.
@@ -162,7 +162,7 @@ while (playAgain == "y") // This while loop will make it so that, once the game 
                 else
                 {
                     Console.WriteLine($"\n You prepare to block the attack of the entity with your {weaponChoice}!");
-                    Console.WriteLine("The 'Deer Entity' attacks you!");
+                    Console.WriteLine("\n The 'Deer Entity' attacks you!");
                     int enemyEntity2Damage = generator.Next(enemyEntity2MinDamage, enemyEntity2MaxDamage) - playerBlock2; // This code randomizes the damage the second AI Entity deals to the player, with a randomized number between 0 and 20.
                     playerHealth -= enemyEntity2Damage;
                     playerHealth = Math.Max(0, playerHealth); // 'Math.Max' is a Math class method used to return the larger of two specified numbers. In this code, 'playerHealth = Math.Max(0, playerHealth);' will not return 0, but 'playerHealth', which is the health of the player, and larger of the two numbers.
